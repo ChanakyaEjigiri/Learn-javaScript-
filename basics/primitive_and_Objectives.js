@@ -53,6 +53,13 @@ delete person.isStudent; // Removing a property
 console.log(person.isStudent); // Outputs: undefined
 console.log(typeof person); // Outputs: object
 
+/* NaN is a special numeric value in JavaScript that stands for "Not-a-Number". It is used to represent a value that is not a valid number, typically as a result of an invalid mathematical operation. For example, dividing zero by zero or attempting to parse a non-numeric string as a number will result in NaN.
+*/
+let invalidNumber = 0 / 0; // Results in NaN
+console.log(invalidNumber); // Outputs: NaN
+console.log(typeof invalidNumber); // Outputs: number (NaN is of type number)
+console.log(isNaN(invalidNumber)); // Outputs: true (isNaN function checks if the value is NaN)
+
 /*OBJECTIVES
 1. Understand the difference between primitive datatypes and objects in JavaScript.
 2. Learn how to create and manipulate primitive datatypes.
