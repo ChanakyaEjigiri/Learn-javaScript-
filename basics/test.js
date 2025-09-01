@@ -28,3 +28,4 @@ const dictionary={
     "initialization":"The process of assigning an initial value to a variable or constant at the time of its declaration."
 }
 console.log(dictionary)
+
