@@ -8,14 +8,20 @@ Here are some common conditional statements in JavaScript:
 4. switch statement:
 5. Ternary operator (conditional operator):
 */
+
+
 //1. if statement:
+//The if statement evaluates a condition and executes a block of code if the condition is true. If the condition is false, the code block is skipped.
 let age = 18;
 if (age >= 18) {
   console.log("You are an adult.");
 }
 // Output: You are an adult.
 
+
+
 //2. if...else statement:
+/*The if...else statement evaluates a condition and executes one block of code if the condition is true and another block of code if the condition is false.*/
 let time = 10;
 if (time < 12) {
   console.log("Good morning!");
@@ -24,7 +30,10 @@ if (time < 12) {
 }
 // Output: Good morning!
 
+
+
 //3. else if statement:
+/*The else if statement allows you to check multiple conditions in sequence. If the first condition is false, it checks the next condition, and so on, until one of the conditions is true or all conditions are checked. if all the conditions are false, then else block will be executed*/
 let score = 85;
 if (score >= 90) {
   console.log("Grade: A");
@@ -37,7 +46,10 @@ if (score >= 90) {
 }
 // Output: Grade: B
 
+
+
 //4. switch statement:
+/*The switch statement evaluates an expression and executes the corresponding case block based on the value of the expression. It is often used when you have multiple possible values for a single variable.*/
 switch (day) {
   case 1:
     dayName = "Monday";
@@ -51,14 +63,18 @@ switch (day) {
   default:
     dayName = "Invalid day";
 }
-
 // Output: Wednesday
 
+
+
 //5. Ternary operator (conditional operator):
+/*The ternary operator is a shorthand way of writing an if...else statement. It takes three operands: a condition, a value to return if the condition is true, and a value to return if the condition is false.*/
 let isMember = true;
 let discount = isMember ? 0.1 : 0;
 console.log("Discount:", discount);
 // Output: Discount: 0.1
+
+
 /*
 These conditional statements help you make decisions in your code and execute different blocks of code based on specific conditions.
 
@@ -68,3 +84,4 @@ Key Points:
 - ternary operator is shorthand for simple if...else.
 - Always include break in switch cases to avoid "fall-through".
 */
+
