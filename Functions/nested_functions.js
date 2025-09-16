@@ -62,3 +62,5 @@ outer()
 //3. Closures: Inner functions can form closures, allowing them to retain access to their outer function's scope even after the outer function has executed.
 //4. Accessibility: Inner functions are only accessible from within their outer function, making them private to that function.
 //5. Use Cases: Nested functions are useful for creating helper functions, managing state, and implementing design patterns like the module pattern.
+
+//==================================================================================================

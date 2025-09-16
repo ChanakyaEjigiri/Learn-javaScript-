@@ -1,8 +1,8 @@
 // LOOPS IN JAVASCRIPT
 /* 
-loops are used to execute a block of code repeatedly until a specified condition is met.
-There are different types of loops and loop controls in JavaScript:
+Loops are used to execute a block of code repeatedly until a specified condition is met.
 
+Types of loops:
 1. for loop
 2. while loop
 3. do...while loop
@@ -17,130 +17,103 @@ Loop controls:
 8. labels in loops
 */
 
-//for LOOP
+//==================================================================================================
+// for LOOP
 /*
-definition: A for loop is used to repeat a block of code a specific number of times.
-it is commonly used when the number of iterations is known beforehand.
-syntax:
+Definition: A for loop is used to repeat a block of code a specific number of times.
+It is commonly used when the number of iterations is known beforehand.
+
+Syntax:
 for (initialization; condition; increment/decrement) {
     // code to be executed
 }
-intialization: It is executed once before the loop starts. It is typically used to initialize a counter variable.
 
-condition: It is evaluated before each iteration of the loop. If it evaluates to true, the loop body is executed. If it evaluates to false, the loop terminates.
-
-increment/decrement: It is executed after each iteration of the loop. It is typically used to update the counter variable.
+- initialization: Executed once before the loop starts (commonly to initialize a counter).
+- condition: Evaluated before each iteration. If true → executes loop body. If false → exits loop.
+- increment/decrement: Executed after each iteration (commonly to update the counter).
 */
 for (let i = 0; i < 5; i++) {
     console.log("for loop iteration:", i);
 }
-// Output:
-// for loop iteration: 0
-// for loop iteration: 1
-// for loop iteration: 2
-// for loop iteration: 3
-// for loop iteration: 4
+// Output: 0 1 2 3 4
 
-
-//while LOOP
+//==================================================================================================
+// while LOOP
 /*
-definition: A while loop is used to repeat a block of code as long as a specified condition is true.
-syntax:
+Definition: A while loop executes a block of code as long as a specified condition is true.
+
+Syntax:
 while (condition) {
     // code to be executed
 }
-condition: It is evaluated before each iteration of the loop. If it evaluates to true, the loop body is executed. If it evaluates to false, the loop terminates.
 
-Note: there must be a way to eventually make the condition false, otherwise the loop will run indefinitely.
+ Make sure the condition eventually becomes false, otherwise it creates an infinite loop.
 */
 let j = 0;
 while (j < 5) {
     console.log("while loop iteration:", j);
-    j++; // incrementing j to eventually make the condition false
+    j++;
 }
-// Output:
-// while loop iteration: 0
-// while loop iteration: 1
-// while loop iteration: 2
-// while loop iteration: 3
-// while loop iteration: 4
+// Output: 0 1 2 3 4
 
-
-//do...while LOOP
+//==================================================================================================
+// do...while LOOP
 /*
-definition: The do...while statement creates a loop that executes a specified statement as long as the test condition evaluates to true. The condition is evaluated after executing the statement, resulting in the specified statement executing at least once.
+Definition: A do...while loop executes the block of code at least once,
+and then continues looping while the condition is true.
 
-syntax:
+Syntax:
 do {
     // code to be executed
 } while (condition);
-condition: An expression evaluated after each pass through the loop. If this condition evaluates to true, statement is re-executed. When condition evaluates to false, execution continues with the statement after the do...while loop.
-
 */
-let i = 0;
+let k = 0;
 do {
-  i += 1;
-  console.log("do...while loop iteration:", i);
-} while (i < 5);
-// Output:
-// do...while loop iteration: 1
-// do...while loop iteration: 2
-// do...while loop iteration: 3
-// do...while loop iteration: 4
-// do...while loop iteration: 5
+  k++;
+  console.log("do...while loop iteration:", k);
+} while (k < 5);
+// Output: 1 2 3 4 5
 
-
-//for...in LOOP
+//==================================================================================================
+// for...in LOOP
 /*
-definition: The for...in statement iterates a specified variable over all enumerable properties of an object. For each distinct property, statements can be executed.
-syntax:
+Definition: Iterates over the enumerable properties (keys) of an object.
+
+Syntax:
 for (variable in object) {
     // code to be executed
 }
-' in ' is a keyword that is used to specify the object whose properties are to be iterated over.
-variable: On each iteration, a different property of the object is assigned to variable.
-object: The object whose enumerable properties are iterated over.
 */
-const marks = {"ram":45, "krish":32, "bharath":50}; 
-for(let key in marks){
-    console.log("Marks of "+key+": "+marks[key]);
+const marks = { ram: 45, krish: 32, bharath: 50 }; 
+for (let key in marks) {
+    console.log("Marks of " + key + ":", marks[key]);
 }
-// Output:
-// Marks of ram: 45
-// Marks of krish: 32
-// Marks of bharath: 50
+// Output: ram: 45, krish: 32, bharath: 50
 
-//for...of LOOP
+//==================================================================================================
+// for...of LOOP
 /*
-definition: The for...of statement creates a loop iterating over iterable objects, including: built-in String, Array, array-like objects (e.g., arguments or NodeList), TypedArray, Map, Set, and user-defined iterables.
-syntax:
+Definition: Iterates over the values of an iterable (Array, String, Map, Set, etc.).
+
+Syntax:
 for (variable of iterable) {
     // code to be executed
 }
-'of' is a keyword that is used to specify the iterable object to be looped over.
-variable: On each iteration, a different value of the iterable is assigned to variable.
-iterable: An object that has iterable properties, such as an Array, String, Map, Set, etc.
-*/ 
+*/
 const arr = [10, 20, 30, 40, 50];
 for (let value of arr) {
     console.log("Array value:", value);
 }
-// Output:
-// Array value: 10
-// Array value: 20
-// Array value: 30
-// Array value: 40
-// Array value: 50
+// Output: 10 20 30 40 50
 
-
-//continue statement
+//==================================================================================================
+// continue statement
 /*
-definition: The continue statement is used to skip the current iteration of a loop and move to the next iteration.
-The continue statement terminates execution of the statements in the current iteration of the current or labeled loop, and continues execution of the loop with the next iteration.
+Definition: Skips the current iteration of a loop and moves to the next iteration.
 
-syntax:
+Syntax:
 continue;
-continue label;
+continue label;   // with labels (advanced usage)
 */
 for (let i = 0; i < 10; i++) {
     if (i % 2 === 0) {
@@ -148,22 +121,16 @@ for (let i = 0; i < 10; i++) {
     }
     console.log("Odd number:", i);
 }
-// Output:
-// Odd number: 1
-// Odd number: 3
-// Odd number: 5
-// Odd number: 7
-// Odd number: 9
+// Output: 1 3 5 7 9
 
-
-//break statement
+//==================================================================================================
+// break statement
 /*
-definition: The break statement is used to exit a loop or switch statement before it has completed all its iterations or cases.
-The break statement terminates the current loop, switch, or label statement and transfers program control to the statement following the terminated statement.
+Definition: Exits the loop immediately, even if the condition is still true.
 
-syntax:
+Syntax:
 break;
-break label;
+break label;  // with labels (advanced usage)
 */
 for (let i = 0; i < 10; i++) {
     if (i === 5) {
@@ -171,43 +138,52 @@ for (let i = 0; i < 10; i++) {
     }
     console.log("Number:", i);
 }
-// Output:
-// Number: 0
-// Number: 1
-// Number: 2
-// Number: 3
-// Number: 4
+// Output: 0 1 2 3 4
 
-
-//labels in loops
+//==================================================================================================
+// nested loops
 /*
-definition: A label provides a statement with an identifier that lets you refer to it elsewhere in your program. You can use labels with break or continue statements to control the flow of loops more precisely.
+Definition: A loop inside another loop.
+The inner loop runs completely for each iteration of the outer loop.
+*/
+for (let i = 1; i <= 3; i++) {
+    console.log("Outer loop iteration:", i);
+    for (let j = 1; j <= 2; j++) {
+        console.log("  Inner loop iteration:", j);
+    }
+}
+// Output:
+// Outer: 1 → Inner: 1,2
+// Outer: 2 → Inner: 1,2
+// Outer: 3 → Inner: 1,2
 
-A labeled statement is any statement that is prefixed with an identifier. You can jump to this label using a break or continue statement nested within the labeled statement.
+//==================================================================================================
+// labels in loops
+/*
+Definition: A label is an identifier that lets you name a loop
+and control it using break or continue.
 
-syntax:
+Syntax:
 labelName: 
     statement
+
 break labelName;
 continue labelName;
 */
-
-outerLoop: // This is a label for the outer loop
+outerLoop: // Label for the outer loop
 for (let i = 0; i < 3; i++) {
     console.log("Outer loop iteration:", i);
     for (let j = 0; j < 3; j++) {
         if (j === 1) {
-            continue outerLoop; // Skip to the next iteration of the outer loop when j is 1
+            continue outerLoop; // Skip to next outer iteration
         }
         console.log("  Inner loop iteration:", j);
     }
 }
 // Output:
 // Outer loop iteration: 0
-// Inner loop iteration: 0
+//   Inner loop iteration: 0
 // Outer loop iteration: 1
-// Inner loop iteration: 0
+//   Inner loop iteration: 0
 // Outer loop iteration: 2
-// Inner loop iteration: 0
-
-// Note: When j is 1, the continue statement causes the program to skip the rest of the inner loop and proceed to the next iteration of the outer loop.
+//   Inner loop iteration: 0
